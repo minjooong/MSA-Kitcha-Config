@@ -39,12 +39,7 @@ spring:
           uri: lb://KITCHA-BOARD
           filters:
             - RewritePath=/kitcha-board/(?<segment>.*), /${segment}
-        - id: config-server
-          uri: lb://CONFIG-SERVER  # Config Server 주소
-          predicates:
-            - Path=/config/**
-          filters:
-            - RewritePath=/config/(?<segment>.*), /${segment}
+
 
 server:
   port: 8072
